@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+  vector<int> arr;
+  int n;
+  cout << "enter the size of the array: ";
+  cin >> n;
+  cout << endl;
+  cout << "Enter element in the array: ";
+  for (int i = 0; i < n; i++) {
+    int element;
+    cin >> element;
+    arr.push_back(element);
+  }
+
+  for (int i = 0; i < arr.size() - 1; i++) {
+    int midIndex = i;
+    for (int j = i + 1; j < arr.size(); j++) {
+      if (arr[midIndex] > arr[j]) {
+        midIndex = j;
+      }
+    }
+    swap(arr[i], arr[midIndex]);
+  }
+
+  cout << endl;
+  cout << "now this is sorted array: ";
+  for (int i = 0; i < arr.size(); i++) {
+    cout << arr[i] << " ";
+  }
+}
