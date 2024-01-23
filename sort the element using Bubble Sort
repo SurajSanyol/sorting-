@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+  vector<int> arr{10,1,7,6,14,9};
+  // int n;
+  // cout << "enter the size of the array: ";
+  // cin >> n;
+  // cout << endl;
+  // cout << "Enter element in the array: ";
+  // for (int i = 0; i < n; i++) {
+  //   int element;
+  //   cin >> element;
+  //   arr.push_back(element);
+  // }
+
+
+  
+  //bubble sort algorithm for sorting the array;
+  for (int round = 0; round < arr.size(); round++) {
+    int swapped=false;
+    for (int j = 0; j < arr.size()-round; j++) {
+      if (arr[j] > arr[j+1]) {
+         swap(arr[j],arr[j+1]);
+         swapped=true;
+      }
+    }
+    if(swapped==false)
+    {
+       break;
+    }
+  }
+
+  cout << endl;
+  cout << "now this is sorted array: ";
+  for (int i = 0; i < arr.size(); i++) {
+    cout << arr[i] << " ";
+  }
+}
